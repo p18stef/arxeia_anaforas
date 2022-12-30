@@ -1,0 +1,26 @@
+#! /usr/bin/bash
+touch results.txt
+echo "Dose onoma gia neo C arxeio:"
+read f
+
+echo "An theleis na ginei compile sto arxeio auto grapse y:"
+read c
+
+if [ "$c" = "y" ];
+then
+echo "compiling $f... "
+sleep 2
+
+if  gcc $f.cpp -o $f;
+then
+chmod +x $f
+echo "To compile tou $f.cpp oloklirothike!"
+echo "Ta apotelesmata tou programmatos:"| cat > results.txt
+./$f >> results.txt
+cat results.txt
+else
+echo "To compile den oloklirothike!" | cat >> results.txt
+fi
+else
+echo "Den epileksate compile..."
+fi
