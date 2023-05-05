@@ -29,6 +29,6 @@ cp book.tex book/book.tex
 mv book.pdf book/book.pdf
 echo "#lang pollen" >> html/book.html.pmd
 cat html/index.html >> html/book.html.pmd
-raco pollen render html/index.html.pmd
+raco pollen render html/book.html.pmd
 rm -rf html/compiled
 rm -rf html/book.html.pmd
